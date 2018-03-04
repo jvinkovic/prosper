@@ -16,5 +16,24 @@ namespace prosper
 		{
 			InitializeComponent ();
 		}
-	}
+        void OnRandomSelect()
+        {
+            DisplayAlert("Random Event", "This RANDOM thing HAPPENED", "ok");
+        }
+        void OnShopSelect()
+        {
+            DisplayAlert("Shop", "This is when the shop will display... awaiting implementation", "ok");
+        }
+
+        async void OnEarnMoneySelect()
+        {
+
+            await Navigation.PushAsync(new EarnMoney());
+        }
+        async void OnManageMoneySelect()
+        {
+            await Navigation.PushAsync(new ManageMoney());
+        }
+
+    }
 }

@@ -28,11 +28,11 @@
                 <Label Text="Health Bar" HorizontalTextAlignment="End" HorizontalOptions="End"/>
                 <Label Text="Money Bar" />
             </StackLayout>
-            <Button Text="Random" Grid.Row="1" Grid.Column="5" HorizontalOptions="End"/>
-            <Button Text="Shop" Grid.Row="2" Grid.Column="5" HorizontalOptions="End"/>
+            <Button Text="Random" Grid.Row="1" Grid.Column="5" HorizontalOptions="End" Clicked="OnRandomSelect"/>
+            <Button Text="Shop" Grid.Row="2" Grid.Column="5" HorizontalOptions="End" Clicked="OnShopSelect"/>
             <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button Text="Earn $" WidthRequest="100"/>
-                <Button Text="Manage $" WidthRequest="100"/>
+                <Button Text="Earn $" WidthRequest="100" Clicked="OnEarnMoneySelect"/>
+                <Button Text="Manage $" WidthRequest="100" Clicked="OnManageMoneySelect"/>
 
             </StackLayout>
         </Grid>
