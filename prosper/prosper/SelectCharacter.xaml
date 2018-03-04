@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prosper.SelectCharacter"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="5">
+            <Label Text="Select your character"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                FontSize="Large" />
+            <Grid Padding="5" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" VerticalOptions="End">
+                    <Grid>
+                        <Image Source="char1.png" Aspect="AspectFit" VerticalOptions="Center"></Image>
+                    </Grid>
+                    <Button x:Name = "char1Button" Text = "Play" Clicked="OnChar1Selection"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalOptions="End" >
+                    <Grid>
+                        <Image Source="char2.png"  Aspect="AspectFit"></Image>
+                    </Grid>
+                    <Button x:Name = "char2Button" Text = "Play" Clicked="OnChar2Selection"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="2" VerticalOptions="End" >
+                    <Grid>
+                        <Image Source="char3.png" Aspect="AspectFit"></Image>
+                    </Grid>
+                    <Button x:Name = "char3Button" Text = "Play" Clicked="OnChar3Selection"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

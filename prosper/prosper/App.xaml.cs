@@ -13,7 +13,9 @@ namespace prosper
 		{
 			InitializeComponent();
 
-			MainPage = new prosper.MainPage();
+            //set MainPage as root NavigationPage
+            MainPage = new NavigationPage(new SelectCharacter());
+            //MainPage = new prosper.MainPage();
 		}
 
 		protected override void OnStart ()
