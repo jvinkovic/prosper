@@ -16,5 +16,21 @@ namespace prosper
 		{
 			InitializeComponent ();
 		}
-	}
+        void OnMowingSelect()
+        {
+            DisplayAlert("Mow The Lawn", "... awaiting implementation", "ok");
+        }
+        void OnCleanSelect()
+        {
+            DisplayAlert("Clean The House", "... awaiting implementation", "ok");
+        }
+        void OnTutorSelect()
+        {
+            DisplayAlert("Financial Tutor Game", "... awaiting implementation", "ok");
+        }
+        void OnCashierSelect()
+        {
+            DisplayAlert("Cashier Game", "... awaiting implementation", "ok");
+        }
+    }
 }

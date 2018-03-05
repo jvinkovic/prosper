@@ -95,6 +95,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\lock.png" />
+  </ItemGroup>
   <Import Project="..\prosper\prosper.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

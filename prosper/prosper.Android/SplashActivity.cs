@@ -18,7 +18,7 @@ namespace prosper.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             StartActivity(typeof(MainActivity));
         }
     }

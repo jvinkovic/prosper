@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <!--TODO: show top status bar -->
-        <Grid Padding="0">
+        <Grid Padding="0" BackgroundColor="Crimson">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="1"/>
@@ -26,6 +26,8 @@
                 <ColumnDefinition Width="1"/>
                 <ColumnDefinition Width="1"/>
             </Grid.ColumnDefinitions>
+            <BoxView Grid.Row="1" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="3" BackgroundColor="White"/>
+            <BoxView Grid.Row="1" Grid.Column="5" Grid.RowSpan="5" Grid.ColumnSpan="3" BackgroundColor="White"/>
             <Label Text="Pocket Money"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
@@ -33,10 +35,12 @@
                        Grid.Row="2"/>
             <Button Text="Mowing the lawn"
                         Grid.Column="2"
-                        Grid.Row="3"/>
+                        Grid.Row="3"
+                    Clicked="OnMowingSelect"/>
             <Button Text="Clean the House"
                         Grid.Column="2"
-                        Grid.Row="4"/>
+                        Grid.Row="4"
+                    Clicked="OnCleanSelect"/>
             <Label Text="Get a Job"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
@@ -44,10 +48,12 @@
                    Grid.Row="2"/>
             <Button Text="Financial Tutor"
                     Grid.Column="6"
-                    Grid.Row="3"/>
+                    Grid.Row="3"
+                    Clicked="OnTutorSelect"/>
             <Button Text="Cashier"
                     Grid.Column="6"
-                    Grid.Row="3"/>
+                    Grid.Row="4"
+                    Clicked="OnCashierSelect"/>
             <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" HeightRequest="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand"/>
             <BoxView Grid.Row="1" Grid.Column="5" BackgroundColor="Gray" HeightRequest="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand"/>
             <BoxView Grid.Row="5" Grid.Column="1" BackgroundColor="Gray" HeightRequest="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand"/>
@@ -56,6 +62,9 @@
             <BoxView Grid.Row="1" Grid.Column="3" BackgroundColor="Gray" WidthRequest="1" Grid.RowSpan="5"/>
             <BoxView Grid.Row="1" Grid.Column="5" BackgroundColor="Gray" WidthRequest="1" Grid.RowSpan="5"/>
             <BoxView Grid.Row="1" Grid.Column="7" BackgroundColor="Gray" WidthRequest="1" Grid.RowSpan="5"/>
+            <BoxView x:Name="LockOverlay" Grid.Row="1" Grid.Column="5" BackgroundColor="Black" Grid.ColumnSpan="3" Grid.RowSpan="5" Opacity="0.3"/>
+            <Image  x:Name="LockImage" Source="lock.png" Grid.Row="2" Grid.Column="6" Grid.RowSpan="3" Grid.ColumnSpan="1"
+                   Aspect="AspectFit" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 
         </Grid>
     </ContentPage.Content>
