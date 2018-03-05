@@ -26,15 +26,26 @@
             <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="TIMER" HorizontalOptions="Center"/>
             <StackLayout Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalOptions="End">
                 <Label Text="Health Bar" HorizontalTextAlignment="End" HorizontalOptions="End"/>
-                <Label Text="Money Bar" />
+                <ProgressBar Progress="0.8"/>
             </StackLayout>
             <Button Text="Random" Grid.Row="1" Grid.Column="5" HorizontalOptions="End" Clicked="OnRandomSelect"/>
             <Button Text="Shop" Grid.Row="2" Grid.Column="5" HorizontalOptions="End" Clicked="OnShopSelect"/>
             <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Button Text="Earn $" WidthRequest="100" Clicked="OnEarnMoneySelect"/>
                 <Button Text="Manage $" WidthRequest="100" Clicked="OnManageMoneySelect"/>
-
             </StackLayout>
+            <BoxView x:Name="TutorialOverlay" BackgroundColor="Black" Opacity="0.2"
+                     Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+            <StackLayout Orientation="Vertical" x:Name="TutorialPopup" BackgroundColor="White"
+                         Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                <Label Text="Tutorial"/>
+                <Label Text="Would you like to play the tutorial"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Yes" FontSize="Medium"/>
+                    <Button Text="No" FontSize="Medium"/>
+                </StackLayout>
+            </StackLayout>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
