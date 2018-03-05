@@ -1,12 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="prosper.EarnMoney">
+             x:Class="prosper.EarnMoney"
+             NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Earn $!"
+        <!--TODO: show top status bar -->
+        <Grid Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="1"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="1"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="1"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Pocket Money"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+                HorizontalOptions="CenterAndExpand"
+                       Grid.Column="2"
+                       Grid.Row="2"/>
+            <Button Text="Mowing the lawn"
+                        Grid.Column="2"
+                        Grid.Row="3"/>
+            <Button Text="Clean the House"
+                        Grid.Column="2"
+                        Grid.Row="4"/>
+            <Label Text="Get a Job"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   Grid.Column="6"
+                   Grid.Row="2"/>
+            <Button Text="Financial Tutor"
+                    Grid.Column="6"
+                    Grid.Row="3"/>
+            <Button Text="Cashier"
+                    Grid.Column="6"
+                    Grid.Row="3"/>
+            <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" HeightRequest="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand"/>
+            <BoxView Grid.Row="1" Grid.Column="5" BackgroundColor="Gray" HeightRequest="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand"/>
+            <BoxView Grid.Row="5" Grid.Column="1" BackgroundColor="Gray" HeightRequest="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand"/>
+            <BoxView Grid.Row="5" Grid.Column="5" BackgroundColor="Gray" HeightRequest="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand"/>
+            <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" WidthRequest="1" Grid.RowSpan="5"/>
+            <BoxView Grid.Row="1" Grid.Column="3" BackgroundColor="Gray" WidthRequest="1" Grid.RowSpan="5"/>
+            <BoxView Grid.Row="1" Grid.Column="5" BackgroundColor="Gray" WidthRequest="1" Grid.RowSpan="5"/>
+            <BoxView Grid.Row="1" Grid.Column="7" BackgroundColor="Gray" WidthRequest="1" Grid.RowSpan="5"/>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

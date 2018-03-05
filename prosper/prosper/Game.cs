@@ -9,7 +9,12 @@ namespace prosper
         public Game(int characterNum)
         {
             int character = characterNum;
+            bool tutorialActive = true;
             //int stage;
+        }
+        public void Tutorial()
+        {
+           //do something???
         }
     }
 }

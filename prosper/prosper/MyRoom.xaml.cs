@@ -14,7 +14,21 @@ namespace prosper
 	{
 		public MyRoom ()
 		{
-			InitializeComponent ();
+            //doesn't do anything
+            //DisplayAlert("HEY", "Before Component Intisialised", "HELLO");
+            InitializeComponent ();
+            //BoxView tutorial = new BoxView()
+            //{
+
+            //}
+            //Button button = new Button
+            //{
+              //  Text = "Navigate!",
+                //HorizontalOptions = LayoutOptions.Center,
+                //VerticalOptions = LayoutOptions.Center
+            //};
+
+            PlayTutorial();
 		}
         void OnRandomSelect()
         {
@@ -33,6 +47,10 @@ namespace prosper
         async void OnManageMoneySelect()
         {
             await Navigation.PushAsync(new ManageMoney());
+        }
+        void PlayTutorial()
+        {
+            DisplayAlert("Tutorial", "Would you like to play the tutorial", "Yes", "No");
         }
 
     }

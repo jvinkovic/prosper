@@ -49,6 +49,7 @@ namespace prosper
             //await App.Current.MainPage.Navigation.PushAsync(new MyRoom());
             await Navigation.PushAsync(new MyRoom());
             //NavigationPage myRoom = new NavigationPage(new MyRoom());
+            /// await start tutorial
         }
     }
 }
