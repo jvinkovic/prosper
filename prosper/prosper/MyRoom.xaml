@@ -58,7 +58,8 @@
                      Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
                 <Label Text="Tutorial" x:Name="TutorialPopupTitle"
                        Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
-                       HorizontalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold"/>
+                       HorizontalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold"
+                       FontFamily="Lobster-Regular.ttf#Lobster-Regular"/>
                 <Label Text="Would you like to play the tutorial?" x:Name="TutorialPopupText"
                        Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
@@ -69,6 +70,39 @@
                 <Button Text="Skip" FontSize="Micro" Clicked="OnSkipTutorial"
                             HorizontalOptions="Center" VerticalOptions="End"
                         Grid.Row="3" Grid.Column="2" Margin="0"/>
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="6" x:Name="StagePopup"
+                  IsVisible="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView x:Name="StageOverlay" BackgroundColor="Black" Opacity="0.2"
+                     Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="5"/>
+                <BoxView x:Name="StageBox" BackgroundColor="White"
+                     Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+                <Label x:Name="StagePopupTitle" 
+                       Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                       HorizontalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold"
+                       FontFamily="Lobster-Regular.ttf#Lobster-Regular"/>
+                <ScrollView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label x:Name="StagePopupText" HorizontalTextAlignment="Center" FontSize="Micro"/>
+                </ScrollView>
+                <Button x:Name="StageBeginText" FontSize="Micro" Clicked="OnStageBegin"
+                            HorizontalOptions="Center" VerticalOptions="Center"
+                        Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0"/>
             </Grid>
         </Grid>
 
