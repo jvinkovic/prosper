@@ -7,11 +7,11 @@
     <ContentPage.Content>
         <Grid Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.85*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -31,11 +31,12 @@
             <Button Text="Random" Grid.Row="1" Grid.Column="5" HorizontalOptions="End" Clicked="OnRandomSelect"/>
             <Button Text="Shop" Grid.Row="2" Grid.Column="5" HorizontalOptions="End" Clicked="OnShopSelect"/>
             <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button Text="Earn $" WidthRequest="100" Clicked="OnEarnMoneySelect"/>
-                <Button Text="Manage $" WidthRequest="100" Clicked="OnManageMoneySelect"/>
-
-
+                <Button Text="Earn $" WidthRequest="100" Clicked="OnEarnMoneySelect" VerticalOptions="CenterAndExpand"/>
+                <Button Text="Manage $" WidthRequest="100" Clicked="OnManageMoneySelect" VerticalOptions="CenterAndExpand"/>
             </StackLayout>
+            <Image x:Name="Character" Grid.Column="3" Grid.Row="1" IsVisible="False" 
+                       HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                       Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill"/>
             <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="6" x:Name="TutorialPopup"
                   IsVisible="False">
                 <Grid.RowDefinitions>

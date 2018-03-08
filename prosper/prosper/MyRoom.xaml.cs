@@ -17,8 +17,7 @@ namespace prosper
 		{
             InitializeComponent ();
             game = g;
-            //place character on screen
-                //TODO
+            AddCharacterToScreen(game.character);
 
             if (!game.gameInitialised)
             {
@@ -107,6 +106,25 @@ namespace prosper
         {
             game.stageInitialised = true;
             StagePopup.IsVisible = false;
+        }
+        void AddCharacterToScreen(int characterNum)
+        {
+           switch (characterNum)
+            {
+                case 1:
+                    Character.Source = "char1.png";
+                    break;
+                case 2:
+                    Character.Source = "char2.png";
+                    break;
+                case 3:
+                    Character.Source = "char3.png";
+                    break;
+                default:
+                    //should throw an error I think
+                    break;
+            }
+            Character.IsVisible = true;
         }
 
     }
