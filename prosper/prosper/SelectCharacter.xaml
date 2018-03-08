@@ -4,11 +4,12 @@
              x:Class="prosper.SelectCharacter"
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Padding="5">
-            <Label Text="Select your character"
+        <StackLayout Orientation="Vertical" Padding="5" BackgroundColor="DarkSlateGray">
+            <Label Text="Select Your Character"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" 
-                FontSize="Large" />
+                FontSize="Large"
+                   TextColor="White"/>
             <Grid Padding="5" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -19,24 +20,36 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" VerticalOptions="End">
-                    <Grid>
-                        <Image Source="char1.png" Aspect="AspectFit" VerticalOptions="Center"></Image>
+                    <Grid Padding="2" BackgroundColor="SlateGray" x:Name="Char1Border">
+                        <Image Source="char1.png" Aspect="AspectFit" BackgroundColor="DarkSlateGray">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChar1Tap"/>
+                            </Image.GestureRecognizers>
+                        </Image>
                     </Grid>
-                    <Button x:Name = "char1Button" Text = "Play" Clicked="OnChar1Selection"/>
+                    <Button x:Name = "char1Button" Text = "Play" Clicked="OnChar1Selection" IsVisible="False"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1" VerticalOptions="End" >
-                    <Grid>
-                        <Image Source="char2.png"  Aspect="AspectFit"></Image>
+                    <Grid Padding="2" BackgroundColor="SlateGray" x:Name="Char2Border">
+                        <Image Source="char2.png"  Aspect="AspectFit" BackgroundColor="DarkSlateGray">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChar2Tap"/>
+                            </Image.GestureRecognizers>
+                        </Image>
                     </Grid>
-                    <Button x:Name = "char2Button" Text = "Play" Clicked="OnChar2Selection"/>
+                    <Button x:Name = "char2Button" Text = "Play" Clicked="OnChar2Selection" IsVisible="False"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="2" VerticalOptions="End" >
-                    <Grid>
-                        <Image Source="char3.png" Aspect="AspectFit"></Image>
+                    <Grid Padding="2" BackgroundColor="SlateGray" x:Name="Char3Border">
+                        <Image Source="char3.png" Aspect="AspectFit" BackgroundColor="DarkSlateGray">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChar3Tap"/>
+                            </Image.GestureRecognizers>
+                        </Image>
                     </Grid>
-                    <Button x:Name = "char3Button" Text = "Play" Clicked="OnChar3Selection"/>
+                    <Button x:Name = "char3Button" Text = "Play" Clicked="OnChar3Selection" IsVisible="False"/>
                 </StackLayout>
             </Grid>
         </StackLayout>
