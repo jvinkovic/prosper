@@ -99,6 +99,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\lock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\timer.png" />
+  </ItemGroup>
   <Import Project="..\prosper\prosper.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
