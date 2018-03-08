@@ -12,24 +12,24 @@ namespace prosper
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MyRoom : ContentPage
 	{
-		public MyRoom ()
+        public Game game;
+		public MyRoom (Game g)
 		{
-            //doesn't do anything
-            //DisplayAlert("HEY", "Before Component Intisialised", "HELLO");
             InitializeComponent ();
-            //BoxView tutorial = new BoxView()
-            //{
+            game = g;
+            if (!game.gameInitialised)
+            {
+                TutorialPopup.IsVisible = true;
+            }
+            else if (!game.stageInitialised)
+            {
+                // if not initialised 
+                // will see if this is a use case
+                DisplayAlert("Code Check", "Nothing for loading page with game intialised but stage not initialised", "alright");
+            }
 
-            //}
-            //Button button = new Button
-            //{
-              //  Text = "Navigate!",
-                //HorizontalOptions = LayoutOptions.Center,
-                //VerticalOptions = LayoutOptions.Center
-            //};
 
-            PlayTutorial();
-		}
+        }
         void OnRandomSelect()
         {
             DisplayAlert("Random Event", "This RANDOM thing HAPPENED", "ok");
@@ -48,10 +48,23 @@ namespace prosper
         {
             await Navigation.PushAsync(new ManageMoney());
         }
-        void PlayTutorial()
-        {
-            DisplayAlert("Tutorial", "Would you like to play the tutorial", "Yes", "No");
-        }
 
+        void OnPlayTutorial()
+        {
+           //when finished tutorial
+            game.gameInitialised = true;
+            TutorialPopup.IsVisible = false;
+            //temporary
+            DisplayAlert("Tutorial", "...awaiting implementation", "OK");
+            // now initialise stage -- check first
+                //TODO
+        }
+        void OnSkipTutorial()
+        {
+            game.gameInitialised = true;
+            TutorialPopup.IsVisible = false;
+            //now initialise stage -- check first
+                //TODO
+        }
     }
 }

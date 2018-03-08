@@ -33,19 +33,45 @@
             <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Button Text="Earn $" WidthRequest="100" Clicked="OnEarnMoneySelect"/>
                 <Button Text="Manage $" WidthRequest="100" Clicked="OnManageMoneySelect"/>
-            </StackLayout>
-            <BoxView x:Name="TutorialOverlay" BackgroundColor="Black" Opacity="0.2"
-                     Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
-            <StackLayout Orientation="Vertical" x:Name="TutorialPopup" BackgroundColor="White"
-                         Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3">
-                <Label Text="Tutorial"/>
-                <Label Text="Would you like to play the tutorial"/>
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Yes" FontSize="Medium"/>
-                    <Button Text="No" FontSize="Medium"/>
-                </StackLayout>
-            </StackLayout>
 
+
+            </StackLayout>
+            <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="6" x:Name="TutorialPopup"
+                  IsVisible="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView x:Name="TutorialOverlay" BackgroundColor="Black" Opacity="0.2"
+                     Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="5"/>
+                <BoxView x:Name="TutorialBox" BackgroundColor="White"
+                     Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+                <Label Text="Tutorial" x:Name="TutorialPopupTitle"
+                       Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                       HorizontalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Would you like to play the tutorial?" x:Name="TutorialPopupText"
+                       Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                       FontSize="Default" HorizontalTextAlignment="Center"/>
+                <Button Text="Play Tutorial" FontSize="Micro" Clicked="OnPlayTutorial" 
+                            HorizontalOptions="Center" VerticalOptions="Center"
+                        Grid.Row="3" Grid.Column="1" Margin="0"/>
+                <Button Text="Skip" FontSize="Micro" Clicked="OnSkipTutorial"
+                            HorizontalOptions="Center" VerticalOptions="End"
+                        Grid.Row="3" Grid.Column="2" Margin="0"/>
+            </Grid>
         </Grid>
+
+
     </ContentPage.Content>
 </ContentPage>

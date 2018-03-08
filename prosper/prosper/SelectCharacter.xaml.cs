@@ -24,7 +24,7 @@ namespace prosper
             //set character to char 1
             Game game = new Game(1);
             //open my room
-            await Navigation.PushAsync(new MyRoom());
+            await Navigation.PushAsync(new MyRoom(game));
         }
         async void OnChar2Selection(object sender, EventArgs args)
         {
@@ -33,7 +33,7 @@ namespace prosper
             //create game object
             //set character to char 2
             Game game = new Game(2);
-            await Navigation.PushAsync(new MyRoom());
+            await Navigation.PushAsync(new MyRoom(game));
             //open my room
         }
         async void OnChar3Selection(object sender, EventArgs args)
@@ -47,7 +47,7 @@ namespace prosper
             //App.Current.MainPage = new NavigationPage(new MyRoom());
             //App.Current.MainPage.Navigation.PushAsync(new MyRoom());
             //await App.Current.MainPage.Navigation.PushAsync(new MyRoom());
-            await Navigation.PushAsync(new MyRoom());
+            await Navigation.PushAsync(new MyRoom(game));
             //NavigationPage myRoom = new NavigationPage(new MyRoom());
             /// await start tutorial
         }
