@@ -58,34 +58,26 @@ namespace prosper
         async void OnChar1Selection(object sender, EventArgs args)
         {
             Button button = (Button)sender;
-            //create game object
             //set character to char 1
-            Game game = new Game(1);
+            Game.Instance.character = 1;
             //open my room
-            await Navigation.PushAsync(new MyRoom(game));
+            await Navigation.PushAsync(new MyRoom());
         }
         async void OnChar2Selection(object sender, EventArgs args)
         {
             Button button = (Button)sender;
-            //create game object
             //set character to char 2
-            Game game = new Game(2);
-            await Navigation.PushAsync(new MyRoom(game));
+            Game.Instance.character = 2;
             //open my room
+            await Navigation.PushAsync(new MyRoom());
         }
         async void OnChar3Selection(object sender, EventArgs args)
         {
             Button button = (Button)sender;
-            //create game object
             //set character to char 3
-            Game game = new Game(3);
+            Game.Instance.character = 3;
             //open my room
-            //App.Current.MainPage = new NavigationPage(new MyRoom());
-            //App.Current.MainPage.Navigation.PushAsync(new MyRoom());
-            //await App.Current.MainPage.Navigation.PushAsync(new MyRoom());
-            await Navigation.PushAsync(new MyRoom(game));
-            //NavigationPage myRoom = new NavigationPage(new MyRoom());
-            /// await start tutorial
+            await Navigation.PushAsync(new MyRoom());
         }
     }
 }

@@ -16,6 +16,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)GameTimer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameStatsModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EarnMoney.xaml.cs">
       <DependentUpon>EarnMoney.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -44,7 +46,6 @@
       <DependentUpon>StatusBar.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Tutorial.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)SelectCharacter.xaml">

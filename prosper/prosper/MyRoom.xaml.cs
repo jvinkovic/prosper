@@ -12,11 +12,10 @@ namespace prosper
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MyRoom : ContentPage
 	{
-        public Game game;
-		public MyRoom (Game g)
+        public Game game = Game.Instance;
+		public MyRoom ()
 		{
             InitializeComponent ();
-            game = g;
             AddCharacterToScreen(game.character);
 
             if (!game.gameInitialised)
