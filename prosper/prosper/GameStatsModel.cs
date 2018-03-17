@@ -6,12 +6,12 @@ using Xamarin.Forms;
 
 namespace prosper
 {
-    public class GameStatsVM : INotifyPropertyChanged
+    public class GameStatsModel : INotifyPropertyChanged
     {
-        double happiness, money;
+        double happiness, moneyProgress, moneyTotal;
         double roundTimer;
         //timer
-
+        public Game game = Game.Instance;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public double RoundTimer
@@ -43,32 +43,53 @@ namespace prosper
             }
             get
             {
-                return happiness;
+                return game.Happiness;
             }
         }
-        public double Money
+        public double MoneyProgress
         {
             set
             {
-                if (money != value)
+                if (moneyProgress != value)
                 {
-                   money = value;
-                    OnPropertyChanged("Money");
-                    UpdateMoney();
+                   moneyProgress = value;
+                    OnPropertyChanged("MoneyProgress");
+                    UpdateMoneyProgress();
                 }
             }
             get
             {
-                return money;
+                return game.MoneyProgress;
+            }
+        }
+
+        public double MoneyTotal
+        {
+            set
+            {
+                if (moneyTotal != value)
+                {
+                    moneyTotal = value;
+                    OnPropertyChanged("MoneyTotal");
+                    UpdateMoneyTotal();
+                }
+            }
+            get
+            {
+                return game.MoneyTotal;
             }
         }
         public void UpdateHappiness()
         {
-            Happiness = 0.4;
+            happiness = game.Happiness;
         }
-        public void UpdateMoney()
+        public void UpdateMoneyProgress()
         {
-            Money = 50;
+            moneyProgress = game.MoneyProgress;
+        }
+        public void UpdateMoneyTotal()
+        {
+            moneyTotal = game.MoneyTotal;
         }
         protected virtual void OnPropertyChanged(string propertyName)
         {

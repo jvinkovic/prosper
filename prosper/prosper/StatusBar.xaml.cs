@@ -15,6 +15,8 @@ namespace prosper
 		public StatusBar ()
 		{
 			InitializeComponent ();
-		}
-	}
+
+
+        }
+    }
 }

@@ -25,15 +25,15 @@ namespace prosper
             GameInitialised = false;
             StageInitialised = false;
             GameStage = Stage.One;
-            MoneyTotal = 0;
-            MoneyGoal = 100;
-            MoneyProgress = 0;
-            Happiness = 1;
+            //start with no money
+            MoneyTotal = 50;
+            MoneyGoal = 100;;
+            //start with full happiness
+            Happiness = 1.0;
             timerInterval = TimeSpan.FromSeconds(180);
 
             //setup the game timer
             Device.StartTimer(timerInterval, TimerElapsed);
-            //GameStatsVM.UpdateMoney();
             
         }
 
@@ -42,12 +42,18 @@ namespace prosper
         public bool StageInitialised { get; set; }
 
         public TimeSpan timerInterval;
-        public int MoneyTotal { get; set; }
+        public double MoneyTotal { get; set; }
 
-        public int MoneyProgress { get; set; }
+        public double MoneyProgress
+        {
+            get
+            {
+                return this.MoneyTotal / this.MoneyGoal;
+            }
+        }
 
-        public int MoneyGoal { get; set; }
-        public int Happiness { get; set; }
+        public double MoneyGoal { get; set; }
+        public double Happiness { get; set; }
 
         public enum Stage
         {

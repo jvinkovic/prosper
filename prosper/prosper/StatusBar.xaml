@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local= "clr-namespace:prosper"
              x:Class="prosper.StatusBar">
+    <ContentView.BindingContext>
+        <local:GameStatsModel/>
+    </ContentView.BindingContext>
     <ContentView.Content>
 
         <Grid BackgroundColor="GhostWhite" HeightRequest="30" VerticalOptions="Start">
@@ -21,7 +25,7 @@
                    HorizontalOptions="Center" VerticalOptions="Center"/>
             <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="3" >
                 <Image Source="timer.png" Aspect="AspectFit"/>
-                <Label Text="1:30" x:Name="Timer"/>
+                <Label Text="{Binding RoundTimer, StringFormat='{0:f2}'}" x:Name="TimerLabel"/>
             </StackLayout>
             <StackLayout Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Orientation="Vertical"
                          VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
@@ -30,7 +34,7 @@
                        FontSize="10"
                        HorizontalOptions="Center"
                        TextColor="Red"/>
-                <ProgressBar Progress="0.3"/>
+                <ProgressBar Progress="{Binding Happiness}"/>
             </StackLayout>
             <StackLayout Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" Orientation="Vertical"
                          VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
@@ -39,7 +43,7 @@
                        FontSize="10"
                        HorizontalOptions="Center"
                        TextColor="Blue"/>
-                <ProgressBar Progress="0.8"/>
+                <ProgressBar Progress="{Binding MoneyProgress}"/>
             </StackLayout>
         </Grid>
     </ContentView.Content>
