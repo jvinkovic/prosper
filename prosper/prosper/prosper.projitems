@@ -16,7 +16,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)GameStatsModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameStatsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EarnMoney.xaml.cs">
       <DependentUpon>EarnMoney.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -33,6 +33,7 @@
       <DependentUpon>MyRoom.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MyRoomViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SelectCharacter.xaml.cs">
       <DependentUpon>SelectCharacter.xaml</DependentUpon>
       <SubType>Code</SubType>

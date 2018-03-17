@@ -4,7 +4,11 @@
              xmlns:common="clr-namespace:prosper"
              x:Class="prosper.MyRoom"
              NavigationPage.HasNavigationBar="false"
+             xmlns:local= "clr-namespace:prosper"
              BackgroundImage="roombackground.png">
+    <ContentPage.BindingContext>
+        <local:MyRoomViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
             <Grid.RowDefinitions>
@@ -31,11 +35,11 @@
                 <Button Text="Earn $" WidthRequest="100" Clicked="OnEarnMoneySelect" VerticalOptions="CenterAndExpand"/>
                 <Button Text="Manage $" WidthRequest="100" Clicked="OnManageMoneySelect" VerticalOptions="CenterAndExpand"/>
             </StackLayout>
-            <Image x:Name="Character" Grid.Column="3" Grid.Row="1" IsVisible="False" 
+            <Image x:Name="Character" Grid.Column="3" Grid.Row="1" IsVisible="{Binding CharacterVisible}" 
                        HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
-                       Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill"/>
+                       Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill" Source="{Binding CharacterImageSource}"/>
             <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="6" x:Name="TutorialPopup"
-                  IsVisible="False">
+                  IsVisible="{Binding TutorialPopupVisible}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
@@ -62,16 +66,16 @@
                        Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                        FontSize="Default" HorizontalTextAlignment="Center"/>
-                <Button Text="Play Tutorial" FontSize="Micro" Clicked="OnPlayTutorial" 
+                <Button Text="Play Tutorial" FontSize="Micro" Command="{Binding PlayTutorialCommand}" 
                             HorizontalOptions="Center" VerticalOptions="Center"
                         Grid.Row="3" Grid.Column="1" Margin="0"/>
-                <Button Text="Skip" FontSize="Micro" Clicked="OnSkipTutorial"
+                <Button Text="Skip" FontSize="Micro" Command="{Binding SkipTutorialCommand}"
                             HorizontalOptions="Center" VerticalOptions="End"
                         Grid.Row="3" Grid.Column="2" Margin="0"/>
             </Grid>
 
             <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="6" x:Name="StagePopup"
-                  IsVisible="False">
+                  IsVisible="{Binding StagePopupVisible}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
@@ -90,15 +94,15 @@
                      Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="5"/>
                 <BoxView x:Name="StageBox" BackgroundColor="White"
                      Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
-                <Label x:Name="StagePopupTitle" 
+                <Label Text="{Binding StagePopupTitle}"
                        Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                        HorizontalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold"
                        FontFamily="Lobster-Regular.ttf#Lobster-Regular"/>
                 <ScrollView Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                    <Label x:Name="StagePopupText" HorizontalTextAlignment="Center" FontSize="Micro"/>
+                    <Label Text="{Binding StagePopupText}" HorizontalTextAlignment="Center" FontSize="Micro"/>
                 </ScrollView>
-                <Button x:Name="StageBeginText" FontSize="Micro" Clicked="OnStageBegin"
+                <Button Text ="{Binding StageBeginText}" FontSize="Micro" Command="{Binding BeginStageCommand}"
                             HorizontalOptions="Center" VerticalOptions="Center"
                         Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0"/>
             </Grid>

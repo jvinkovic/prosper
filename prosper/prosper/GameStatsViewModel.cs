@@ -6,13 +6,18 @@ using Xamarin.Forms;
 
 namespace prosper
 {
-    public class GameStatsModel : INotifyPropertyChanged
+    public class GameStatsViewModel : INotifyPropertyChanged
     {
         double happiness, moneyProgress, moneyTotal;
         string roundTimer;
         //timer
         public Game game = Game.Instance;
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public GameStatsViewModel()
+        {
+            roundTimer = game.TimerText;
+        }
 
         public string RoundTimer
         {
@@ -21,7 +26,7 @@ namespace prosper
                 if (roundTimer != value)
                 {
                     roundTimer = value;
-                    OnPropertyChanged("RoundTimer");
+                    OnPropertyChanged(nameof(RoundTimer));
                     UpdateRoundTimer();
                     //update the round timer
                 }
