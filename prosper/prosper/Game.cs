@@ -40,7 +40,7 @@ namespace prosper
 
 
         }
-        public bool isTimerCancel { get; set; } = false;
+        public bool IsTimerCancel { get; set; } = false;
         public int Character { get; set; }
         public bool GameInitialised { get; set; }
         public bool StageInitialised { get; set; }
@@ -90,7 +90,7 @@ namespace prosper
             int counter = sec;
             Device.StartTimer(new TimeSpan(0, 0, 1), () =>
             {
-                if (isTimerCancel)
+                if (IsTimerCancel)
                 {
                     return false;
                 }
