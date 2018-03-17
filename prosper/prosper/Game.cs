@@ -21,12 +21,14 @@ namespace prosper
         }
         private Game()
         {
-            character = 1;
-            gameInitialised = false;
-            stageInitialised = false;
-            stage = Stage.One;
-            money = 0;
-            happiness = 1;
+            Character = 1;
+            GameInitialised = false;
+            StageInitialised = false;
+            GameStage = Stage.One;
+            MoneyTotal = 0;
+            MoneyGoal = 100;
+            MoneyProgress = 0;
+            Happiness = 1;
             timerInterval = TimeSpan.FromSeconds(180);
 
             //setup the game timer
@@ -35,12 +37,17 @@ namespace prosper
             
         }
 
-        public int character;
-        public bool gameInitialised;
-        public bool stageInitialised;
+        public int Character { get; set; }
+        public bool GameInitialised { get; set; }
+        public bool StageInitialised { get; set; }
+
         public TimeSpan timerInterval;
-        public int money;
-        public int happiness;
+        public int MoneyTotal { get; set; }
+
+        public int MoneyProgress { get; set; }
+
+        public int MoneyGoal { get; set; }
+        public int Happiness { get; set; }
 
         public enum Stage
         {
@@ -48,7 +55,7 @@ namespace prosper
             Two,
             Three
         };
-        public Stage stage;
+        public Stage GameStage { get; set; }
 
         private bool TimerElapsed()
         {

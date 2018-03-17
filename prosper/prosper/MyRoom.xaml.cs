@@ -16,13 +16,13 @@ namespace prosper
 		public MyRoom ()
 		{
             InitializeComponent ();
-            AddCharacterToScreen(game.character);
+            AddCharacterToScreen(game.Character);
 
-            if (!game.gameInitialised)
+            if (!game.GameInitialised)
             {
                 TutorialPopup.IsVisible = true;
             }
-            else if (!game.stageInitialised)
+            else if (!game.StageInitialised)
             {
                 // if not initialised 
                 // will see if this is a use case
@@ -53,11 +53,11 @@ namespace prosper
         void OnPlayTutorial()
         {
            //when finished tutorial
-            game.gameInitialised = true;
+            game.GameInitialised = true;
             TutorialPopup.IsVisible = false;
             //temporary
             DisplayAlert("Tutorial", "...awaiting implementation", "OK");
-            if (!game.stageInitialised)
+            if (!game.StageInitialised)
             {
                 InitialiseStage();
             }
@@ -66,7 +66,7 @@ namespace prosper
         void InitialiseStage()
         {
 
-            if (game.stage == Game.Stage.One)
+            if (game.GameStage == Game.Stage.One)
             {
                 StagePopupTitle.Text = "Stage 1";
                 StagePopupText.Text = "The objective of stage 1 is to save $100 to purchase a mobile phone." +
@@ -74,7 +74,7 @@ namespace prosper
                     "\nTo avoid running low on happiness you can buy items from the shop.";
                 StageBeginText.Text = "Begin Stage 1!";
             }
-            else if (game.stage == Game.Stage.Two)
+            else if (game.GameStage == Game.Stage.Two)
             {
                 StagePopupTitle.Text = "Stage 2";
                 StagePopupText.Text = "The objective of stage 2 is to save $1000 to purchase a car." +
@@ -82,7 +82,7 @@ namespace prosper
                     "\nYou will now pay extra bills per round for your phone";
                 StageBeginText.Text = "Begin Stage 2!";
             }
-            else if (game.stage == Game.Stage.Three)
+            else if (game.GameStage == Game.Stage.Three)
             {
                 StagePopupTitle.Text = "Stage 3";
                 StagePopupText.Text = "The objective of stage 3 is to save $5000 to purchase a holiday." +
@@ -94,16 +94,16 @@ namespace prosper
         }
         void OnSkipTutorial()
         {
-            game.gameInitialised = true;
+            game.GameInitialised = true;
             TutorialPopup.IsVisible = false;
-            if (!game.stageInitialised)
+            if (!game.StageInitialised)
             {
                 InitialiseStage();
             }
         }
         void OnStageBegin()
         {
-            game.stageInitialised = true;
+            game.StageInitialised = true;
             StagePopup.IsVisible = false;
         }
         void AddCharacterToScreen(int characterNum)

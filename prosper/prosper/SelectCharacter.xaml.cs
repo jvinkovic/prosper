@@ -59,7 +59,7 @@ namespace prosper
         {
             Button button = (Button)sender;
             //set character to char 1
-            Game.Instance.character = 1;
+            Game.Instance.Character = 1;
             //open my room
             await Navigation.PushAsync(new MyRoom());
         }
@@ -67,7 +67,7 @@ namespace prosper
         {
             Button button = (Button)sender;
             //set character to char 2
-            Game.Instance.character = 2;
+            Game.Instance.Character = 2;
             //open my room
             await Navigation.PushAsync(new MyRoom());
         }
@@ -75,7 +75,7 @@ namespace prosper
         {
             Button button = (Button)sender;
             //set character to char 3
-            Game.Instance.character = 3;
+            Game.Instance.Character = 3;
             //open my room
             await Navigation.PushAsync(new MyRoom());
         }
