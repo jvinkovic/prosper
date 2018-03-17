@@ -16,7 +16,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)GameTimer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameStatsModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EarnMoney.xaml.cs">
       <DependentUpon>EarnMoney.xaml</DependentUpon>

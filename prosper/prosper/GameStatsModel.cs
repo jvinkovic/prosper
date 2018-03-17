@@ -9,12 +9,12 @@ namespace prosper
     public class GameStatsModel : INotifyPropertyChanged
     {
         double happiness, moneyProgress, moneyTotal;
-        double roundTimer;
+        string roundTimer;
         //timer
         public Game game = Game.Instance;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public double RoundTimer
+        public string RoundTimer
         {
             set
             {
@@ -22,12 +22,13 @@ namespace prosper
                 {
                     roundTimer = value;
                     OnPropertyChanged("RoundTimer");
+                    UpdateRoundTimer();
                     //update the round timer
                 }
             }
             get
             {
-                return roundTimer;
+                return game.TimerText;
             }
         }
         public double Happiness
@@ -86,6 +87,10 @@ namespace prosper
         public void UpdateMoneyProgress()
         {
             moneyProgress = game.MoneyProgress;
+        }
+        public void UpdateRoundTimer()
+        {
+            roundTimer = game.TimerText;
         }
         public void UpdateMoneyTotal()
         {
